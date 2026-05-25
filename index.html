@@ -4,153 +4,542 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sirinivasa Bartholomeuz Foundation | SBF</title>
-    <!-- Professional Typography -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
     <style>
+        /* CSS Visual Identity Palette */
         :root {
             --teal: #008080;
             --gold: #E1AD01;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
+            --dark-slate: #2c3e50;
+            --charcoal: #333333;
+            --light-bg: #f8f9fa;
+            --pure-white: #ffffff;
         }
 
-        body { font-family: 'Inter', sans-serif; margin: 0; color: #333; line-height: 1.6; scroll-behavior: smooth; }
-        h1, h2, h3 { font-family: 'Playfair Display', serif; }
-
-        /* Navigation */
-        header { 
-            background: #fff; 
-            padding: 20px 5%; 
-            display: flex; 
-            justify-content: space-between; 
-            align-items: center; 
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05); 
-            position: sticky; 
-            top: 0; 
-            z-index: 1000; 
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-        .brand { font-size: 22px; font-weight: bold; color: var(--teal); text-decoration: none; }
-        nav a { margin-left: 25px; text-decoration: none; color: #555; font-weight: 500; transition: 0.3s; }
-        nav a:hover { color: var(--teal); }
 
-        /* Hero Section */
-        .hero { 
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&q=80&w=1600'); 
-            height: 70vh; 
-            background-size: cover; 
-            background-position: center;
-            display: flex; 
-            flex-direction: column; 
-            justify-content: center; 
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal);
+            background-color: var(--pure-white);
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            color: var(--dark-slate);
+        }
+
+        /* Fixed Navigation Header */
+        header {
+            background-color: var(--pure-white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            text-align: center; 
-            color: #fff; 
-            padding: 0 15%;
+            padding: 15px 20px;
         }
-        .hero h1 { font-size: 48px; margin-bottom: 15px; }
-        .hero p { font-size: 18px; max-width: 700px; margin-bottom: 25px; opacity: 0.9; }
 
-        /* General Sections */
-        section { padding: 80px 10%; }
-        .section-title { text-align: center; color: var(--teal); margin-bottom: 50px; font-size: 32px; }
+        .brand-name {
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--teal);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
 
-        /* Objective Cards */
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
-        .card { background: var(--light); padding: 30px; border-radius: 12px; border-top: 4px solid var(--gold); transition: transform 0.3s; }
-        .card:hover { transform: translateY(-5px); }
-        .card h3 { color: var(--teal); margin-top: 0; }
+        nav {
+            display: flex;
+            align-items: center;
+        }
 
-        /* Impact Gallery Placeholders */
-        .gallery { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-        .media-placeholder { 
-            background: #eee; 
-            height: 250px; 
-            display: flex; 
-            flex-direction: column;
-            align-items: center; 
-            justify-content: center; 
-            color: #888; 
-            border: 2px dashed #ccc; 
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal);
+            margin-left: 25px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--teal);
+        }
+
+        .cta-nav-btn {
+            background-color: var(--teal);
+            color: var(--pure-white) !important;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-nav-btn:hover {
+            background-color: #006666;
+        }
+
+        /* Hero Layout - Utilizing Intro Pic.jpg */
+        .hero {
+            position: relative;
+            background: linear-gradient(rgba(0, 40, 40, 0.75), rgba(0, 20, 20, 0.85)), 
+                        url('Intro Pic.jpg') no-repeat center center/cover;
+            color: var(--pure-white);
+            padding: 160px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            color: var(--pure-white);
+            font-size: 50px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            font-weight: 400;
+        }
+
+        .hero-btn {
+            background-color: var(--gold);
+            color: #111;
+            padding: 14px 30px;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            display: inline-block;
+        }
+
+        .hero-btn:hover {
+            opacity: 0.9;
+        }
+
+        /* Section Specifications */
+        section {
+            padding: 90px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 38px;
+            color: var(--teal);
+            margin-bottom: 15px;
+            position: relative;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 750px;
+            margin: 0 auto 60px auto;
+            color: #666;
+            font-size: 16px;
+        }
+
+        /* Legacy Block Styling */
+        .legacy-wrapper {
+            background-color: var(--light-bg);
+            border-top: 1px solid #eef2f3;
+            border-bottom: 1px solid #eef2f3;
+        }
+
+        .legacy-container {
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
+            gap: 50px;
+            align-items: center;
+        }
+
+        .legacy-text blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--teal);
+            border-left: 4px solid var(--gold);
+            padding-left: 20px;
+            margin: 25px 0;
+            line-height: 1.4;
+        }
+
+        /* Objectives Card Structure */
+        .pillars-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+            gap: 35px;
+        }
+
+        @media (max-width: 600px) {
+            .pillars-container { grid-template-columns: 1fr; }
+        }
+
+        .pillar-card {
+            background: var(--pure-white);
+            padding: 40px;
             border-radius: 8px;
-            font-size: 14px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+            border-top: 4px solid var(--teal);
         }
 
-        footer { background: var(--dark); color: #fff; padding: 40px 10%; text-align: center; }
-        .btn { background: var(--teal); color: #fff; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: 600; display: inline-block; }
+        .pillar-card h3 {
+            margin-bottom: 20px;
+            color: var(--teal);
+            font-size: 24px;
+            border-bottom: 1px solid #f0f0f0;
+            padding-bottom: 10px;
+        }
+
+        .pillar-card ul {
+            list-style: none;
+        }
+
+        .pillar-card ul li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 15px;
+        }
+
+        .pillar-card ul li::before {
+            content: "•";
+            color: var(--gold);
+            font-size: 22px;
+            position: absolute;
+            left: 5px;
+            top: -2px;
+        }
+
+        /* Governance Layout */
+        .gov-wrapper {
+            background-color: var(--light-bg);
+        }
+
+        .gov-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .gov-layout { grid-template-columns: 1fr; }
+            .legacy-container { grid-template-columns: 1fr; }
+        }
+
+        .trustee-box {
+            background: var(--pure-white);
+            border-left: 4px solid var(--gold);
+            padding: 20px 25px;
+            margin-bottom: 15px;
+            border-radius: 0 6px 6px 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+        }
+
+        .trustee-box h4 {
+            font-size: 18px;
+            color: var(--dark-slate);
+        }
+
+        .trustee-box p {
+            font-size: 14px;
+            color: #777;
+            font-weight: 500;
+        }
+
+        /* Events Layout */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background: var(--pure-white);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.04);
+            border: 1px solid #eee;
+        }
+
+        .event-placeholder {
+            background-color: #e9ecef;
+            height: 220px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #888;
+            border-bottom: 3px solid var(--teal);
+        }
+
+        .event-body {
+            padding: 25px;
+        }
+
+        .event-tag {
+            display: inline-block;
+            background-color: #e6f2f2;
+            color: var(--teal);
+            padding: 3px 12px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Contact & Engagement Block */
+        .contact-section {
+            background-color: var(--dark-slate);
+            color: var(--pure-white);
+            text-align: center;
+        }
+
+        .contact-container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+
+        .email-display-box {
+            background: rgba(255, 255, 255, 0.08);
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 6px;
+            margin: 30px 0;
+            font-size: 20px;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        .email-display-box a {
+            color: var(--gold);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .email-display-box a:hover {
+            color: var(--pure-white);
+        }
+
+        /* Footer */
+        footer {
+            background-color: #1a252f;
+            color: rgba(255,255,255,0.6);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="brand">Sirinivasa Bartholomeuz Foundation</a>
-        <nav>
-            <a href="#mission">Our Mission</a>
-            <a href="#objectives">Objectives</a>
-            <a href="#impact">Impact</a>
-            <a href="#" class="btn">Get Involved</a>
-        </nav>
+        <div class="nav-container">
+            <a href="#" class="brand-name">Sirinivasa Bartholomeuz Foundation</a>
+            <nav>
+                <a href="#about">Our Story</a>
+                <a href="#objectives">Core Framework</a>
+                <a href="#governance">Governance</a>
+                <a href="#events">Impact Log</a>
+                <a href="#get-involved" class="cta-nav-btn">Get Involved</a>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
-        <h1>Honouring a Legacy of Compassion</h1>
-        <p>A living tribute to Mr. Sirinivasa Bartholomeuz, supporting initiatives that uplift underprivileged communities across Sri Lanka since 2025.</p>
-        <a href="#mission" class="btn">Learn Our Story</a>
+        <div class="hero-content">
+            <h1>Sirinivasa Bartholomeuz Foundation</h1>
+            <p>Established in 2025 to carry forward the compassionate legacy of Mr. Sirinivasa Bartholomeuz by building sustainable pathways to support underprivileged individuals and communities across Sri Lanka.</p>
+            <a href="#about" class="hero-btn">Discover Our Vision</a>
+        </div>
     </section>
 
-    <section id="mission">
-        <h2 class="section-title">Vision & Mission</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Our Vision</h3>
-                <p>A compassionate and equitable society in which every individual has the opportunity to live with dignity and access quality education and healthcare.</p>
+    <div class="legacy-wrapper" id="about">
+        <section>
+            <div class="legacy-container">
+                <div class="legacy-text">
+                    <h2 style="font-size: 36px; margin-bottom: 20px; color: var(--teal);">1. Introduction & Inspiration</h2>
+                    <p>The Sirinivasa Bartholomeuz Foundation (SBF) was established in profound loving memory of Mr. Sirinivasa Bartholomeuz. Founded comprehensively by his wife and three sons in 2025, the Foundation translates deep familial memory into real-world structural outreach.</p>
+                    <blockquote>
+                        "The Sirinivasa Bartholomeuz Foundation stands as a living tribute to a man whose life was guided entirely by kindness and compassion." [cite: 21]
+                    </blockquote>
+                    <p style="margin-bottom: 15px;"><strong>Our Vision:</strong> A compassionate and equitable society in which every individual has the strategic opportunity to live with dignity, access quality education, and receive essential healthcare[cite: 4].</p>
+                    <p><strong>Our Mission:</strong> To create sustainable and meaningful change in the lives of those in need through targeted support in poverty alleviation, education, and healthcare, while fostering widespread community empowerment and shared civic responsibility[cite: 5].</p>
+                </div>
+                <div>
+                    <div style="background: var(--pure-white); padding: 35px; border-radius: 8px; box-shadow:0 10px 30px rgba(0,0,0,0.03); border-left: 5px solid var(--teal);">
+                        <h4 style="font-family:'Playfair Display',serif; font-size:22px; margin-bottom:15px; color:var(--dark-slate);">Implementation Framework</h4>
+                        <p style="font-size:14px; color:#555; margin-bottom:15px;">Our core methodology prioritizes objective efficiency and rigorous local tracking[cite: 19, 20]:</p>
+                        <p style="font-size:14px; color:#555; font-style:italic;">"We identify individual beneficiaries uniquely through trusted local community networks and collaborate directly with established NGOs, government bodies, and corporate enterprises to maximize reach and preserve absolute fiscal transparency." [cite: 19, 20]</p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Our Mission</h3>
-                <p>To create sustainable change through targeted support in poverty alleviation, education, and healthcare while fostering community empowerment.</p>
+        </section>
+    </div>
+
+    <section id="objectives">
+        <h2 class="section-title">2. Objectives & Action Plan</h2>
+        <p class="section-subtitle">The programmatic execution of SBF is managed through four core strategic pillars to ensure systemic development and real impact[cite: 6, 9, 11, 14].</p>
+        
+        <div class="pillars-container">
+            <div class="pillar-card">
+                <h3>Poverty Alleviation & Livelihood</h3>
+                <ul>
+                    <li>Provide direct financial assistance, nutritious food, secure shelter, and basic daily necessities to individuals and families battling extreme poverty[cite: 6].</li>
+                    <li>Support local small-scale income-generating activities and specialized vocational training programs to foster self-reliance[cite: 7].</li>
+                    <li>Partner natively with community-based organizations to properly identify families in need and track long-term aid programs[cite: 8].</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Education & Youth Development</h3>
+                <ul>
+                    <li>Offer dedicated educational scholarships, academic grants, and standard school supplies to promising children from low-income backgrounds[cite: 9].</li>
+                    <li>Support essential educational infrastructure repairs and technological updates in underserved schools[cite: 10].</li>
+                    <li>Conduct structured personal mentorship and active career guidance programs to help youth unlock and achieve their full potential[cite: 10].</li>
+                    <li>Promote localized digital literacy workshops, computational access, and modern life skills[cite: 11].</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Healthcare & Medical Assistance</h3>
+                <ul>
+                    <li>Provide urgent medical aid, health access, and critical funding to individuals unable to afford complex treatment or monthly medicine[cite: 11].</li>
+                    <li>Sponsor and deploy localized community health camps, critical blood donation drives, and preventive health awareness programs[cite: 12].</li>
+                    <li>Support public hospitals and municipal clinics located deep within rural or heavily underserved regional areas[cite: 13].</li>
+                </ul>
+            </div>
+
+            <div class="pillar-card">
+                <h3>Community & Social Well-being</h3>
+                <ul>
+                    <li>Actively engage in targeted field projects designed to enhance the immediate quality of life for structurally marginalized groups[cite: 14].</li>
+                    <li>Promote environmental awareness, eco-system protection, and regional climate sustainability[cite: 15].</li>
+                    <li>Encourage baseline volunteerism, active community involvement, and proactive civic responsibility among youth networks[cite: 15].</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <section id="objectives" style="background: #fff;">
-        <h2 class="section-title">Strategic Objectives</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Poverty Alleviation</h3>
-                <p>Providing financial assistance, food, and shelter while supporting vocational training for self-reliance.</p>
+    <div class="gov-wrapper" id="governance">
+        <section>
+            <h2 class="section-title">3. Governance & Stewardship</h2>
+            <p class="section-subtitle">SBF maintains precise managerial oversight to protect institutional trust and ensure long-term mission transparency[cite: 17, 19].</p>
+            
+            <div class="gov-layout">
+                <div>
+                    <h3 style="margin-bottom: 15px; font-size: 24px;">The Board of Trustees</h3>
+                    <p style="margin-bottom: 20px;">The Foundation is strictly governed by a formal Board of Trustees, composed initially of the founding family members[cite: 17]. This internal management ensures that every programmatic branch remains completely authentic to the spirit and values of Mr. Sirinivasa Bartholomeuz[cite: 3, 17].</p>
+                    <p><strong>Sustainability Model:</strong> SBF begins its operations with an initial endowment provided directly by the founding family[cite: 18]. The organization is structured to scale its operational reach responsibly through future fundraising campaigns, global grants, and institutional enterprise partnerships[cite: 18].</p>
+                </div>
+                <div>
+                    <h3 style="margin-bottom: 20px; font-size: 22px; color: var(--teal);">Founding Family Members</h3>
+                    
+                    <div class="trustee-box">
+                        <h4>Mrs. [Full Name]</h4>
+                        <p>Wife of Late Sirinivasa Bartholomeuz • Founding Trustee </p>
+                    </div>
+                    <div class="trustee-box">
+                        <h4>Mr. [Full Name]</h4>
+                        <p>Son • Founding Trustee </p>
+                    </div>
+                    <div class="trustee-box">
+                        <h4>Mr. [Full Name]</h4>
+                        <p>Son • Founding Trustee </p>
+                    </div>
+                    <div class="trustee-box">
+                        <h4>Mr. [Full Name]</h4>
+                        <p>Son • Founding Trustee </p>
+                    </div>
+                </div>
             </div>
-            <div class="card">
-                <h3>Education</h3>
-                <p>Offering scholarships, grants, and school supplies to children from low-income backgrounds.</p>
+        </section>
+    </div>
+
+    <section id="events">
+        <h2 class="section-title">4. Impact Gallery</h2>
+        <p class="section-subtitle">A verified public logging ledger showing real-world project tracking as programmatic allocations roll out across regional provinces.</p>
+        
+        <div class="events-grid">
+            <div class="event-card">
+                <div class="event-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4; margin-bottom:10px;"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 3"/></svg>
+                    <span style="font-size:13px; font-weight:600;">Media Verification Space</span>
+                </div>
+                <div class="event-body">
+                    <span class="event-tag">Scholarships</span>
+                    <h4 style="font-family:'Playfair Display',serif; font-size:20px; margin-bottom:10px;">Inaugural Academic Supply Drive</h4>
+                    <p style="font-size:14px; color:#666;">This visual slot is reserved for full high-resolution media tracking and text sheets following the distribution of school items[cite: 9].</p>
+                </div>
             </div>
-            <div class="card">
-                <h3>Healthcare</h3>
-                <p>Sponsoring community health camps and providing medical aid to those unable to afford treatment.</p>
+
+            <div class="event-card">
+                <div class="event-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4; margin-bottom:10px;"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 3"/></svg>
+                    <span style="font-size:13px; font-weight:600;">Media Verification Space</span>
+                </div>
+                <div class="event-body">
+                    <span class="event-tag">Medical Aid</span>
+                    <h4 style="font-family:'Playfair Display',serif; font-size:20px; margin-bottom:10px;">Regional Diagnostic Camp Allocation</h4>
+                    <p style="font-size:14px; color:#666;">This slot will host comprehensive community patient data, metrics, and photography from rural clinical operations[cite: 12, 13].</p>
+                </div>
+            </div>
+
+            <div class="event-card">
+                <div class="event-placeholder">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" style="opacity:0.4; margin-bottom:10px;"><path d="M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z"/><path d="M12 7v5l3 3"/></svg>
+                    <span style="font-size:13px; font-weight:600;">Media Verification Space</span>
+                </div>
+                <div class="event-body">
+                    <span class="event-tag">Livelihoods</span>
+                    <h4 style="font-family:'Playfair Display',serif; font-size:20px; margin-bottom:10px;">Vocational Self-Reliance Program</h4>
+                    <p style="font-size:14px; color:#666;">Tracking metrics for structural training grants allocated to micro-enterprise startups in target communities[cite: 7].</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section id="impact">
-        <h2 class="section-title">Impact Gallery</h2>
-        <p style="text-align: center; margin-bottom: 40px;">Real-time documentation of our projects in rural and underserved areas.</p>
-        <div class="gallery">
-            <div class="media-placeholder">
-                <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" width="40" style="opacity: 0.3; margin-bottom: 10px;">
-                <span>Placeholder: Community Outreach Photo</span>
+    <section class="contact-section" id="get-involved">
+        <div class="contact-container">
+            <h2 style="color: var(--pure-white); font-size: 36px; margin-bottom: 15px;">Connect & Partner With SBF</h2>
+            <p style="opacity: 0.85; font-size: 16px;">We welcome institutional grant inquiries, strategic non-profit alliances, and collaborative structural execution proposals alongside verified local networks[cite: 18, 19].</p>
+            
+            <div class="email-display-box">
+                Primary Registry Contact Desk:<br>
+                <a href="mailto:bartholomeuzfoundation@gmail.com">bartholomeuzfoundation@gmail.com</a>
             </div>
-            <div class="media-placeholder">
-                <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" width="40" style="opacity: 0.3; margin-bottom: 10px;">
-                <span>Placeholder: Healthcare Camp Video</span>
-            </div>
-            <div class="media-placeholder">
-                <img src="https://cdn-icons-png.flaticon.com/512/3342/3342137.png" width="40" style="opacity: 0.3; margin-bottom: 10px;">
-                <span>Placeholder: Educational Support Photos</span>
-            </div>
+            
+            <p style="font-size: 13px; opacity: 0.6; font-style: italic;">All collaborative inquiries will be carefully compiled and routed to the Board of Trustees for thorough review[cite: 17].</p>
         </div>
     </section>
 
     <footer>
-        <p>&copy; 2026 Sirinivasa Bartholomeuz Foundation (SBF). All Rights Reserved.</p>
-        <p style="font-size: 14px; opacity: 0.7;">Founded by the family of Late Sirinivasa Bartholomeuz to honor a life of kindness.</p>
+        <p style="font-weight: 600; color: #fff; margin-bottom: 5px;">Sirinivasa Bartholomeuz Foundation</p>
+        <p>National Mission Framework Registry • Sri Lanka </p>
+        <p style="font-size: 12px; margin-top: 25px; opacity: 0.5;">&copy; 2026 Sirinivasa Bartholomeuz Foundation. All Rights Reserved.</p>
     </footer>
 
 </body>
