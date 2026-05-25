@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sirinivasa Bartholomeuz Foundation (SBF)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+    
+    <style>
+        /* CSS Styling - Visual Theme: The Horizon of Hope */
+        :root {
+            --teal-compassion: #008080;
+            --gold-saffron: #E1AD01;
+            --white-linen: #F9F9F9;
+            --charcoal-slate: #333333;
+            --light-teal: #e6f2f2;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--charcoal-slate);
+            background-color: #ffffff;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+        }
+
+        /* Navigation */
+        header {
+            background-color: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: 700;
+            color: var(--teal-compassion);
+            text-decoration: none;
+            font-family: 'Playfair Display', serif;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--charcoal-slate);
+            margin-left: 20px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--teal-compassion);
+        }
+
+        .cta-btn {
+            background-color: var(--teal-compassion);
+            color: #ffffff;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #006666;
+            color: #ffffff;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 80, 80, 0.85), rgba(0, 40, 40, 0.9)), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            color: #ffffff;
+            padding: 140px 20px;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        /* Section Global Settings */
+        section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            color: var(--teal-compassion);
+            margin-bottom: 15px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 50px auto;
+            color: #666;
+        }
+
+        /* Legacy / About Section */
+        .legacy-section {
+            background-color: var(--white-linen);
+            max-width: 100%;
+            padding: 80px 20px;
+        }
+
+        .legacy-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            align-items: center;
+        }
+
+        .legacy-text blockquote {
+            font-family: 'Playfair Display', serif;
+            font-style: italic;
+            font-size: 22px;
+            color: var(--teal-compassion);
+            border-left: 4px solid var(--gold-saffron);
+            padding-left: 15px;
+            margin: 20px 0;
+        }
+
+        /* Pillars / Objectives Grid */
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            border-top: 4px solid var(--teal-compassion);
+            transition: transform 0.3s;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .pillar-card h3 {
+            margin-bottom: 15px;
+            color: var(--teal-compassion);
+            font-size: 22px;
+        }
+
+        /* Events / Impact Placeholders */
+        .events-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .event-card {
+            background: #ffffff;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .event-placeholder-img {
+            background-color: #ddd;
+            height: 200px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #777;
+            font-weight: 500;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .event-content {
+            padding: 25px;
+        }
+
+        .event-tag {
+            display: inline-block;
+            background-color: var(--light-teal);
+            color: var(--teal-compassion);
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .event-content h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .event-content .date {
+            color: var(--gold-saffron);
+            font-size: 14px;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--charcoal-slate);
+            color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer p {
+            opacity: 0.7;
+            margin-top: 10px;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .legacy-container { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 34px; }
+            nav { display: none; } /* Simplified for mobile example */
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo">SBF</a>
+            <nav>
+                <a href="#about">Our Story</a>
+                <a href="#objectives">What We Do</a>
+                <a href="#events">Impact Gallery</a>
+                <a href="#contact" class="cta-btn">Support Us</a>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Honouring a Legacy of Kindness</h1>
+            <p>Established in 2025 to carry forward the compassionate spirit of Late Mr. Sirinivasa Bartholomeuz, dedicated to supporting underserved communities across Sri Lanka.</p>
+            <a href="#objectives" class="cta-btn" style="background-color: var(--gold-saffron); color: var(--charcoal-slate);">Explore Our Pillars</a>
+        </div>
+    </section>
+
+    <div class="legacy-section" id="about">
+        <section>
+            <div class="legacy-container">
+                <div class="legacy-text">
+                    <h2 style="font-size: 36px; margin-bottom: 20px; color: var(--teal-compassion);">Our Origin & Mission</h2>
+                    <p>The Sirinivasa Bartholomeuz Foundation (SBF) was founded by the loving wife and three sons of Mr. Bartholomeuz. Our core mission is to bring structured, sustainable aid to underprivileged individuals by focusing on direct, high-impact societal interventions.</p>
+                    <blockquote>
+                        "A life guided unconditionally by kindness, empathy, and quiet structural support for those in need."
+                    </blockquote>
+                    <p>We work collaboratively alongside verified NGOs, community leaders, and local government bodies to ensure transparency and accountability at every step of our delivery process.</p>
+                </div>
+                <div style="background: url('https://images.unsplash.com/photo-1489710437720-ebb67ec84dd2?auto=format&fit=crop&w=600&q=80') center center/cover; height: 350px; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);"></div>
+            </div>
+        </section>
+    </div>
+
+    <section id="objectives">
+        <h2 class="section-title">The Four Pillars</h2>
+        <p class="section-subtitle">Our structural efforts are categorized into four critical areas of development to systematically combat poverty and enable long-term societal resilience.</p>
+        
+        <div class="pillars-grid">
+            <div class="pillar-card">
+                <h3>Poverty Alleviation</h3>
+                <p>Providing direct financial aid, nutrition security packages, and structural shelter upgrades for families facing extreme systemic poverty.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Education & Youth</h3>
+                <p>Empowering children through dedicated academic scholarships, distribution of learning materials, and modern digital literacy facilities.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Healthcare Support</h3>
+                <p>Sponsoring local community health camps, essential medical supply logistics, and financial assistance for complex treatments.</p>
+            </div>
+            <div class="pillar-card">
+                <h3>Community Well-being</h3>
+                <p>Developing specialized programs for marginalized demographics, youth mentorship initiatives, and localized environmental stewardship.</p>
+            </div>
+        </div>
+    </section>
+
+    <div style="background-color: var(--white-linen); max-width:100%; padding: 80px 0;" id="events">
+        <section style="padding:0 20px;">
+            <h2 class="section-title">Impact Gallery & Past Events</h2>
+            <p class="section-subtitle">A transparent log tracking our real-world execution. The following blocks are placeholders reserved for upcoming programmatic launches.</p>
+            
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-placeholder-img" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1577896851231-70ef18881754?auto=format&fit=crop&w=500&q=80');">
+                        <span>[ Photo Gallery Space ]</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Education</span>
+                        <h3>Inaugural Youth Scholarship Drive</h3>
+                        <div class="date">Coming Soon</div>
+                        <p>Detailed updates, recipient counts, and photo documentation will be securely published immediately following implementation.</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-placeholder-img" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=500&q=80');">
+                        <span>[ Photo Gallery Space ]</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Healthcare</span>
+                        <h3>Community Health & Diagnostic Camp</h3>
+                        <div class="date">Coming Soon</div>
+                        <p>Full metrics detailing medical supplies distributed, patients treated, and voluntary clinical partners will fill this section.</p>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-placeholder-img" style="background-image: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://images.unsplash.com/photo-1464234470489-f37dbf54a861?auto=format&fit=crop&w=500&q=80');">
+                        <span>[ Photo Gallery Space ]</span>
+                    </div>
+                    <div class="event-content">
+                        <span class="event-tag">Alleviation</span>
+                        <h3>Livelihood & Resource Distribution</h3>
+                        <div class="date">Coming Soon</div>
+                        <p>Tracking self-sustained income project donations, micro-grants, and immediate household welfare distribution initiatives.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer id="contact">
+        <h2 style="font-family: 'Playfair Display', serif; margin-bottom: 10px;">Sirinivasa Bartholomeuz Foundation</h2>
+        <p>Built with transparency. Guided by compassion.</p>
+        <p style="font-size: 12px; margin-top: 30px;">&copy; 2026 Sirinivasa Bartholomeuz Foundation. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
